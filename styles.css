@@ -1,0 +1,216 @@
+:root {
+    --color-border-social-media: #DCDCDC;
+    --color-border-login: #DCDCDC;
+    --color-text-input: #FFF;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    font-size: 1.6rem;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+form {
+    max-width: 600px;
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #000;
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    animation: toDark 0.5s ease-in-out;
+    transition: transform 0.5s;
+}
+
+.form-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+.form-header h1 {
+    color: white;
+}
+.form-header h1::before{
+    position: absolute;
+    content:'';
+    width: 10%;
+    background-color: #A020F0;
+    height: 3px;
+    bottom: -1px;
+    border-radius: 5px;
+}
+
+.login-social-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.login-social-media .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
+.social-media {
+    border: 1px solid var(--color-border-social-media);
+    width: 50%;
+}
+.social-media a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    text-decoration: none;
+    color: white;
+}
+.social-media a svg {
+    width: 2em;
+}
+
+.inputs {
+    width: 100%;
+}
+.input-box {
+    border-bottom: 1px solid var(--color-border-login)
+}
+.input-box label {
+    color: white;
+}
+.input-field {
+    display: flex;
+    cursor: text;
+    gap: 10px;
+}
+.input-field input {
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    color: var(--color-text-input);
+    font-size: 1.6rem;
+}
+
+.input-field input:focus {
+    outline: none;
+}
+
+.buttonSubmit {
+    margin-top: 2rem;
+    width: 100%;
+    text-align: center;
+}
+.buttonSubmit input{
+    margin: 0 auto;
+    width: 50%;
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+
+/* start form light */
+
+form.light {
+    background-color: #fff;
+    background-image: linear-gradient(62deg, #ffffff 0%, #ffffff 100%);
+    animation: toLight 0.5s ease-in-out;
+    transition: transform 0.5s;
+}
+form.light h1 {
+    color: black;
+}
+form.light .form-header h1::before{
+    position: absolute;
+    content:'';
+    width: 10%;
+    background-color: black;
+    height: 3px;
+    bottom: -1px;
+    border-radius: 5px;
+}
+
+form.light .input-field input {
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    color: var(--color-text-input);
+    font-size: 1.6rem;
+}
+
+form.light .login-social-media p{
+    color: black;
+}
+
+form.light .input-box label,
+form.light .input-field svg path
+{
+    color: black;
+    fill: black;
+}
+
+
+
+@keyframes toDark {
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+        background-color: #000;
+        background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+    }
+}
+
+@keyframes toLight {
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+  
+@keyframes animStar {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-2000px);
+    }
+}
+
+@media only screen and (min-width:291px) and (max-width:600px) {
+    form{
+        width: 90vw;
+    }
+}  
