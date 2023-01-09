@@ -2,6 +2,7 @@
     --color-border-social-media: #DCDCDC;
     --color-border-login: #DCDCDC;
     --color-text-input: #FFF;
+    --color-text-input-light: black;
 }
 
 html {
@@ -120,6 +121,7 @@ form {
 
 .input-field input:focus {
     outline: none;
+    background-color: transparent;
 }
 
 .buttonSubmit {
@@ -160,7 +162,7 @@ form.light .input-field input {
     border: none;
     width: 100%;
     background-color: transparent;
-    color: var(--color-text-input);
+    color: var(--color-text-input-light);
     font-size: 1.6rem;
 }
 
@@ -175,7 +177,21 @@ form.light .input-field svg path
     fill: black;
 }
 
+/* Cor de fundo do autocomplete */
+form input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px rgba(255, 0, 0, 0.5) inset;
+}
+form.light input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px rgba(255, 0, 0, 0.5) inset;
+}
 
+/* Cor do texto do autocomplete */
+form input:-webkit-autofill {
+    -webkit-text-fill-color: white !important;
+}
+form.light input:-webkit-autofill {
+    -webkit-text-fill-color: black !important;
+}
 
 @keyframes toDark {
     from{
